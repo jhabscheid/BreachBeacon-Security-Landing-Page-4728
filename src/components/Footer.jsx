@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiMail, FiTwitter, FiLinkedin, FiGithub } = FiIcons;
+const { FiMail, FiTwitter, FiLinkedin, FiGithub, FiShield } = FiIcons;
 
 const Footer = () => {
   return (
@@ -14,14 +14,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/uploads/favicon.png" 
-                alt="BreachBeacon Logo" 
-                className="w-10 h-10 rounded-full"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <SafeIcon icon={FiShield} className="text-white text-xl" />
+              </div>
               <span className="text-xl font-bold text-white">BreachBeacon</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">

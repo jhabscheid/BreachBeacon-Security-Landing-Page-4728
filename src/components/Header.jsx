@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiMenu, FiX } = FiIcons;
+const { FiMenu, FiX, FiShield } = FiIcons;
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,16 +37,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/uploads/favicon.png" 
-              alt="BreachBeacon Logo" 
-              className="w-10 h-10 rounded-full"
-              onError={(e) => {
-                console.error('Logo failed to load:', e);
-                e.target.style.display = 'none';
-              }}
-              onLoad={() => console.log('Logo loaded successfully')}
-            />
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+              <SafeIcon icon={FiShield} className="text-white text-xl" />
+            </div>
             <span className="text-xl font-bold text-white">BreachBeacon</span>
           </Link>
 
