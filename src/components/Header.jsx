@@ -38,7 +38,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/favicon.png" 
+              src="/uploads/favicon.png" 
               alt="BreachBeacon Logo" 
               className="w-10 h-10 rounded-full"
               onError={(e) => {

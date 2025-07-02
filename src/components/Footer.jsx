@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
               <img 
-                src="/favicon.png" 
+                src="/uploads/favicon.png" 
                 alt="BreachBeacon Logo" 
                 className="w-10 h-10 rounded-full"
                 onError={(e) => {
