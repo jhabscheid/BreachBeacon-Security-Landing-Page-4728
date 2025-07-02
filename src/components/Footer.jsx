@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiShield, FiMail, FiTwitter, FiLinkedin, FiGithub } = FiIcons;
+const { FiMail, FiTwitter, FiLinkedin, FiGithub } = FiIcons;
 
 const Footer = () => {
   return (
@@ -12,10 +13,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <SafeIcon icon={FiShield} className="text-2xl text-purple-400" />
+            <Link to="/" className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/favicon.png" 
+                alt="BreachBeacon Logo" 
+                className="w-10 h-10 rounded-full"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
               <span className="text-xl font-bold text-white">BreachBeacon</span>
-            </div>
+            </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               Protecting your digital identity with real-time breach monitoring and instant alerts. 
               Stay one step ahead of cybercriminals.
@@ -32,10 +40,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#features" className="text-gray-400 hover:text-purple-400 transition-colors">Features</a></li>
-              <li><a href="#how-it-works" className="text-gray-400 hover:text-purple-400 transition-colors">How It Works</a></li>
-              <li><a href="#pricing" className="text-gray-400 hover:text-purple-400 transition-colors">Pricing</a></li>
-              <li><a href="https://breachbeacon.io" className="text-gray-400 hover:text-purple-400 transition-colors">Get Started</a></li>
+              <li><Link to="/features" className="text-gray-400 hover:text-purple-400 transition-colors">Features</Link></li>
+              <li><Link to="/how-it-works" className="text-gray-400 hover:text-purple-400 transition-colors">How It Works</Link></li>
+              <li><Link to="/pricing" className="text-gray-400 hover:text-purple-400 transition-colors">Pricing</Link></li>
+              <li><Link to="/blog" className="text-gray-400 hover:text-purple-400 transition-colors">Blog</Link></li>
             </ul>
           </div>
 
